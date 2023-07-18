@@ -1,17 +1,10 @@
-import { Chef, Footer, Gallery, Header, Laurels } from './container';
-import { Navbar } from './components';
-
 import './App.css';
+import Food from './pages/Food/Food';
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Header />
-      <Chef />
-      <Laurels />
-      <Gallery />
-      <Footer />
+      <Food />
     </div>
   );
 }

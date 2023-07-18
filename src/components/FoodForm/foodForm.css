@@ -1,0 +1,111 @@
+.foodform {
+  margin: 0 auto;
+  width: 400px;
+  height: 355px;
+  border: 2px solid red;
+  margin-top: 4%;
+  padding: 0.4%;
+}
+
+.form {
+  width: 100%;
+  background-color: grey;
+}
+
+.food__name {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.food__name input {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.img__upload {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.inputer__img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img__in {
+  width: 85%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.upl {
+  width: 15%;
+}
+
+.upl button {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.desc {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.foodDesc {
+  font-size: 21px;
+}
+
+.desc input {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.origin {
+  width: 100%;
+  font-size: 21px;
+  margin-bottom: 17px;
+}
+
+.origin input {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+}
+
+.submit {
+  width: 100px;
+  padding: 13px;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
+
+.cancel {
+  width: 100px;
+  padding: 13px;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
