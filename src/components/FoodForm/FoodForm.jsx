@@ -4,7 +4,7 @@ import './foodForm.css';
 import { useDataContext } from '../../constext/DataContext';
 
 function FoodForm() {
-  const { handleSubmit, values } = useDataContext();
+  const { handleSubmit, values, editValues } = useDataContext();
   return (
     <div className="foodform">
       <form className="form" id="foodForm" onSubmit={handleSubmit}>
@@ -71,6 +71,9 @@ function FoodForm() {
           {values.imageUrl && <img src={values.imageUrl} alt="voice" />}
           <p>Description: {values.description}</p>
           <p>Origin: {values.Origin}</p>
+          <button type="button" onClick={editValues}>
+            edit
+          </button>
         </div>
       )}
     </div>
