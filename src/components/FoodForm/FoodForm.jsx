@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useContext } from 'react';
+import React from 'react';
 import './foodForm.css';
-import DaTaContext from '../../constext/DataContext';
+import { useDataContext } from '../../constext/DataContext';
 
 function FoodForm() {
-  const { handleSubmit, values } = useContext(DaTaContext);
+  const { handleSubmit, values } = useDataContext();
   return (
     <div className="foodform">
       <form className="form" id="foodForm" onSubmit={handleSubmit}>
