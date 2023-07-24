@@ -4,6 +4,7 @@ import './food.css';
 import SearchNavber from '../../components/nav/searchNavber';
 import Button from '../../Atoms/FoodFormCaller';
 import FoodForm from '../../components/FoodForm/FoodForm';
+import FoodDisplay from '../../components/FoodDisplayer/FoodDisplay';
 
 function Food() {
   const { open, setOpen } = useDataContext();
@@ -21,6 +22,7 @@ function Food() {
             />
           </div>
         </div>
+        <FoodDisplay />
       </div>
     </div>
   );
