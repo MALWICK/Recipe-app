@@ -67,18 +67,6 @@ function FoodForm() {
             </button>
           </div>
         </form>
-        {/* {Object.keys(values).length > 0 && (
-          <div className="data">
-            <h2>Form Data</h2>
-            <p>Name: {values.name}</p>
-            {values.imageUrl && <img src={values.imageUrl} alt="voice" />}
-            <p>Description: {values.description}</p>
-            <p>Origin: {values.Origin}</p>
-            <button type="button" onClick={editValues}>
-              edit
-            </button>
-          </div>
-        )} */}
       </div>
     </div>
   );
