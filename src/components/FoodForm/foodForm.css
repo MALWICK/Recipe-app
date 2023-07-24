@@ -1,15 +1,31 @@
+.disForm {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f7f7f76c;
+  position: absolute;
+  z-index: 1;
+}
+
 .foodform {
-  margin: 0 auto;
-  width: 400px;
-  height: 355px;
-  border: 2px solid red;
-  margin-top: 4%;
-  padding: 0.4%;
+  width: 500px;
+  padding: 0.9%;
+  border-radius: 0.9rem;
+  background-color: #ecd3d3;
 }
 
 .form {
   width: 100%;
-  background-color: grey;
+  height: 375px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  background-color: white;
 }
 
 .food__name {
@@ -24,12 +40,14 @@
   padding: 9px;
   outline: none;
   border: 1px solid grey;
+  border-radius: 0.4rem;
 }
 
 .img__upload {
   width: 100%;
   margin-bottom: 10px;
   font-size: 21px;
+  border-radius: 0.4rem;
 }
 
 .inputer__img {
@@ -37,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 0.4rem;
 }
 
 .img__in {
@@ -44,6 +63,7 @@
   padding: 9px;
   outline: none;
   border: 1px solid grey;
+  border-radius: 0.4rem;
 }
 
 .upl {
@@ -71,6 +91,7 @@
   padding: 9px;
   outline: none;
   border: 1px solid grey;
+  border-radius: 0.4rem;
 }
 
 .origin {
@@ -84,6 +105,7 @@
   padding: 9px;
   outline: none;
   border: 1px solid grey;
+  border-radius: 0.4rem;
 }
 
 .actions {

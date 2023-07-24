@@ -8,6 +8,7 @@ const DataContext = createContext({});
 export function DataProvider({ children }) {
   const [values, setValues] = useState({ id: v4() });
   /*   console.log(values); */
+  const [open, setOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +16,6 @@ export function DataProvider({ children }) {
     const formData = Object.fromEntries(data.entries());
 
     setValues((prev) => ({ ...prev, ...formData }));
-    /*  console.log(formData); */
 
     // Store the values in local storage
     localStorage.setItem('formData', JSON.stringify(formData));
@@ -25,14 +25,17 @@ export function DataProvider({ children }) {
     // Retrieve the data from local storage on component mount
     const formData = localStorage.getItem('formData');
     if (formData) {
-      /*   setValues(JSON.parse(formData)); */
       setValues((prev) => ({ ...prev, ...JSON.parse(formData) }));
-      /*  console.log(JSON.parse(formData)); */
       // Do something with the retrieved data
     }
   }, []);
 
   console.log({ values });
+
+  const ClosePup = (e) => {
+    e.preventDefault();
+    setOpen(false);
+  };
 
   const editValues = () => {
     console.log(values.id);
@@ -40,7 +43,15 @@ export function DataProvider({ children }) {
 
   return (
     <DataContext.Provider
-      value={{ setValues, values, handleSubmit, editValues }}
+      value={{
+        setValues,
+        values,
+        handleSubmit,
+        editValues,
+        open,
+        setOpen,
+        ClosePup,
+      }}
     >
       {children}
     </DataContext.Provider>
