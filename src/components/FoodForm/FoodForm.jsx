@@ -4,7 +4,6 @@ import { v4 } from 'uuid';
 import { useDataContext } from '../../constext/DataContext';
 
 function FoodForm() {
-  /*   const { handleSubmit, values, editValues } = useDataContext(); */
   const { handleSubmit, ClosePup } = useDataContext();
   return (
     <div className="disForm">
