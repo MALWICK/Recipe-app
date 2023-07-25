@@ -21,8 +21,8 @@ function Food() {
               onClick={() => setOpen(true)}
             />
           </div>
+          <FoodDisplay />
         </div>
-        <FoodDisplay />
       </div>
     </div>
   );

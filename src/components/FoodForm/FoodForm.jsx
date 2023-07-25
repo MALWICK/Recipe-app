@@ -1,6 +1,5 @@
 import React from 'react';
 import './foodForm.css';
-import { v4 } from 'uuid';
 import { useDataContext } from '../../constext/DataContext';
 
 function FoodForm() {
@@ -9,7 +8,6 @@ function FoodForm() {
     <div className="disForm">
       <div className="foodform">
         <form className="form" id="foodForm" onSubmit={handleSubmit}>
-          <input type="text" name="id" hidden value={v4()} />
           <div className="food__name">
             <div className="closer" />
             <div className="foodn">

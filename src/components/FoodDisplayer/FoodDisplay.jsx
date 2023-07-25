@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDataContext } from '../../constext/DataContext';
+import './foodDisplay.css';
 
 function FoodDisplay() {
-  const { values, editValues } = useDataContext();
+  const { values } = useDataContext();
 
   return (
     <div className="foodDisplay">
@@ -10,12 +11,8 @@ function FoodDisplay() {
         {values.map((value) => {
           return (
             <div key={value.id} className="food__display">
-              <p> {value.name}</p>
               <img src={value.imageUrl} alt="food" />
-              <p> {value.description}</p>
-              <button type="button" onClick={editValues}>
-                Edit
-              </button>
+              <p> {value.name}</p>
             </div>
           );
         })}

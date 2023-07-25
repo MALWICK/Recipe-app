@@ -1,0 +1,19 @@
+.foodDisplay {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: yellow;
+  margin-top: 3%;
+}
+
+.food__display_wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  background-color: blue;
+}
