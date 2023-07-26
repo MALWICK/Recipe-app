@@ -3,17 +3,7 @@ import './foodForm.css';
 import { useDataContext } from '../../constext/DataContext';
 
 function FoodForm() {
-  const { setValues, ClosePup, setOpen, favorite } = useDataContext();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const id = Date.now();
-    const data = new FormData(e.currentTarget);
-    const formData = Object.fromEntries(data.entries());
-    const itemValues = { ...formData, id, favorite };
-    setValues((prev) => [...prev, itemValues]);
-    setOpen(false);
-  };
+  const { ClosePup, handleSubmit } = useDataContext();
 
   return (
     <div className="disForm">

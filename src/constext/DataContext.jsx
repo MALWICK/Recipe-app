@@ -35,6 +35,16 @@ export function DataProvider({ children }) {
     setOpen(true);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const id = Date.now();
+    const data = new FormData(e.currentTarget);
+    const formData = Object.fromEntries(data.entries());
+    const itemValues = { ...formData, id, favorite };
+    setValues((prev) => [...prev, itemValues]);
+    setOpen(false);
+  };
+
   return (
     <DataContext.Provider
       value={{
@@ -45,6 +55,7 @@ export function DataProvider({ children }) {
         setOpen,
         ClosePup,
         favorite,
+        handleSubmit,
       }}
     >
       {children}
