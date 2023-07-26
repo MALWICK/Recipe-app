@@ -3,42 +3,27 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 
 const DataContext = createContext({});
+const itemsForm = () => {
+  const dats = localStorage.getItem('item');
+  if (dats) {
+    return JSON.parse(dats);
+  }
+  return [];
+};
 
 export function DataProvider({ children }) {
-  const [values, setValues] = useState([]);
+  const [values, setValues] = useState(itemsForm());
   /*   console.log(values); */
   const [open, setOpen] = useState(false);
   const [favorite] = useState('no');
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const id = Date.now();
-    const data = new FormData(e.currentTarget);
-    const formData = Object.fromEntries(data.entries());
-    const itemValues = { ...formData, id, favorite };
-    setValues((prev) => [itemValues, ...prev]);
-
-    // Store the values in local storage
-    localStorage.setItem('values', JSON.stringify(values));
-
-    setOpen(false);
-  };
 
   useEffect(() => {
     if (values.length !== 0) {
-      localStorage.setItem('values', JSON.stringify(values));
+      localStorage.setItem('item', JSON.stringify(values));
     }
-  });
+  }, [values]);
 
   console.log(values);
-
-  useEffect(() => {
-    // Retrieve the data from local storage on component mount
-    const formData = localStorage.getItem('values');
-    if (formData) {
-      setValues((prev) => [...prev, JSON.parse(formData)]);
-      // Do something with the retrieved data
-    }
-  }, []);
 
   const ClosePup = (e) => {
     e.preventDefault();
@@ -55,11 +40,11 @@ export function DataProvider({ children }) {
       value={{
         setValues,
         values,
-        handleSubmit,
         editValues,
         open,
         setOpen,
         ClosePup,
+        favorite,
       }}
     >
       {children}

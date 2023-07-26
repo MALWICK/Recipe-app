@@ -10,9 +10,9 @@ function FoodDisplay() {
       <div className="food__display_wrapper">
         {values?.map((value) => {
           return (
-            <div key={value.id} className="food__display">
-              <img src={value.imageUrl} alt="food" />
-              <p> {value.name}</p>
+            <div key={value?.id} className="food__display">
+              <img src={value?.imageUrl} alt="food" />
+              <p> {value?.name}</p>
             </div>
           );
         })}
