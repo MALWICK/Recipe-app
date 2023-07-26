@@ -17,10 +17,9 @@ export function DataProvider({ children }) {
     const formData = Object.fromEntries(data.entries());
     const itemValues = { ...formData, id, favorite };
     setValues((prev) => [...prev, itemValues]);
-    if (values.length > 0) {
-      // Store the values in local storage
-      localStorage.setItem('formData', JSON.stringify(values));
-    }
+    // Store the values in local storage
+    localStorage.setItem('formData', JSON.stringify(values));
+
     setOpen(false);
   };
 
@@ -28,14 +27,11 @@ export function DataProvider({ children }) {
 
   useEffect(() => {
     // Retrieve the data from local storage on component mount
-    const retrieveDataFromLocalStorage = () => {
-      const formData = localStorage.getItem('formData');
-      if (formData) {
-        return JSON.parse(formData);
-      }
-      return null;
-    };
-    retrieveDataFromLocalStorage();
+    const formData = localStorage.getItem('formData');
+    if (formData) {
+      setValues((prev) => [...prev, JSON.parse(formData)]);
+      // Do something with the retrieved data
+    }
   }, []);
 
   const ClosePup = (e) => {
