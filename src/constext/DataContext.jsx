@@ -16,12 +16,17 @@ export function DataProvider({ children }) {
     const data = new FormData(e.currentTarget);
     const formData = Object.fromEntries(data.entries());
     const itemValues = { ...formData, id, favorite };
-    setValues((prev) => [...prev, itemValues]);
+    setValues((prev) => [itemValues, ...prev]);
     // Store the values in local storage
-    localStorage.setItem('formData', JSON.stringify(values));
 
     setOpen(false);
   };
+
+  useEffect(() => {
+    if (values.length !== 0) {
+      localStorage.setItem('formData', JSON.stringify(values));
+    }
+  });
 
   console.log(values);
 

@@ -8,7 +8,7 @@ function FoodDisplay() {
   return (
     <div className="foodDisplay">
       <div className="food__display_wrapper">
-        {values.map((value) => {
+        {values?.map((value) => {
           return (
             <div key={value.id} className="food__display">
               <img src={value.imageUrl} alt="food" />
