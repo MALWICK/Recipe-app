@@ -9,7 +9,6 @@ export function DataProvider({ children }) {
   /*   console.log(values); */
   const [open, setOpen] = useState(false);
   const [favorite] = useState('no');
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = Date.now();
@@ -17,14 +16,16 @@ export function DataProvider({ children }) {
     const formData = Object.fromEntries(data.entries());
     const itemValues = { ...formData, id, favorite };
     setValues((prev) => [itemValues, ...prev]);
+
     // Store the values in local storage
+    localStorage.setItem('values', JSON.stringify(values));
 
     setOpen(false);
   };
 
   useEffect(() => {
     if (values.length !== 0) {
-      localStorage.setItem('formData', JSON.stringify(values));
+      localStorage.setItem('values', JSON.stringify(values));
     }
   });
 
@@ -32,7 +33,7 @@ export function DataProvider({ children }) {
 
   useEffect(() => {
     // Retrieve the data from local storage on component mount
-    const formData = localStorage.getItem('formData');
+    const formData = localStorage.getItem('values');
     if (formData) {
       setValues((prev) => [...prev, JSON.parse(formData)]);
       // Do something with the retrieved data
