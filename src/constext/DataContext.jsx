@@ -37,14 +37,9 @@ export function DataProvider({ children }) {
   };
 
   const editValues = (val) => {
-    /*   const findRecipe = values.find((item) => item.id !== val.id); */
     setEditFood(val);
-    /*  console.log(val.id); */
-
     setOpenEdit(true);
   };
-
-  /*   console.log(editFood); */
 
   const handleSubmit = (e) => {
     e.preventDefault();
