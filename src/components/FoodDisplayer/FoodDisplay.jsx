@@ -15,7 +15,7 @@ function FoodDisplay() {
             <div key={value?.id} className="food__display">
               <img src={value?.imageUrl} alt="food" />
               <p> {value?.name}</p>
-              <button type="button" onClick={() => editValues(value.id)}>
+              <button type="button" onClick={() => editValues(value)}>
                 edit
               </button>
             </div>

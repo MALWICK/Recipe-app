@@ -3,11 +3,26 @@ import './editFrom.css';
 import { useDataContext } from '../../constext/DataContext';
 
 function EditForm() {
-  const { closeEditform, handleSubmit, editFood } = useDataContext();
+  const { closeEditform, editFood, values, setValues, setOpenEdit } =
+    useDataContext();
+  const handleEdit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const items = Object.fromEntries(data.entries());
+    const food = values.find((item) => item.id === editFood.id);
+    console.log(food.id);
+    const newItem = { ...food, ...items };
+    const operation = values.filter((item) => item.id !== newItem.id);
+    setValues([...operation, newItem]);
+    setTimeout(() => {
+      closeEditform();
+    }, 3000);
+    setOpenEdit(false);
+  };
   return (
     <div className="disForm">
       <div className="foodform">
-        <form className="form" id="foodForm" onSubmit={handleSubmit}>
+        <form className="form" id="foodForm" onSubmit={handleEdit}>
           <div className="food__name">
             <div className="closer" />
             <div className="foodn">

@@ -36,17 +36,19 @@ export function DataProvider({ children }) {
     setOpenEdit(false);
   };
 
-  const editValues = (id) => {
-    const findRecipe = values.find((item) => item.id === id);
-    setEditFood(findRecipe);
-    console.log(id);
+  const editValues = (val) => {
+    /*   const findRecipe = values.find((item) => item.id !== val.id); */
+    setEditFood(val);
+    /*  console.log(val.id); */
 
     setOpenEdit(true);
   };
 
+  /*   console.log(editFood); */
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const filtered = values.filter((value) => value.id !== editFood.id);
+    const filtered = values.filter((value) => value.id === editFood.id);
 
     const id = Date.now();
     const data = new FormData(e.currentTarget);
@@ -71,6 +73,7 @@ export function DataProvider({ children }) {
         editFood,
         closeEditform,
         openEdit,
+        setOpenEdit,
       }}
     >
       {children}
