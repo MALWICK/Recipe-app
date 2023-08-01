@@ -1,0 +1,133 @@
+.disForm {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f7f7f76c;
+  position: absolute;
+  z-index: 1;
+}
+
+.foodform {
+  width: 500px;
+  padding: 0.9%;
+  border-radius: 0.9rem;
+  background-color: #ecd3d3;
+}
+
+.form {
+  width: 100%;
+  height: 375px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  background-color: white;
+}
+
+.food__name {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.food__name input {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+}
+
+.img__upload {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 21px;
+  border-radius: 0.4rem;
+}
+
+.inputer__img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.4rem;
+}
+
+.img__in {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+}
+
+.upl {
+  width: 15%;
+}
+
+.upl button {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.desc {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.foodDesc {
+  font-size: 21px;
+}
+
+.desc input {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+}
+
+.origin {
+  width: 100%;
+  font-size: 21px;
+  margin-bottom: 17px;
+}
+
+.origin input {
+  width: 100%;
+  padding: 9px;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+}
+
+.submit {
+  width: 100px;
+  padding: 13px;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
+
+.cancel {
+  width: 100px;
+  padding: 13px;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
