@@ -8,7 +8,15 @@ function FoodDisplay() {
 
   return (
     <div className="foodDisplay">
-      <h1>Food Recipes</h1>
+      <h3>Let Discover Food</h3>
+      <h1>Special Dishes Today</h1>
+
+      <div className="i__container">
+        <div className="dinner">
+          <i className="fa-solid fa-plate-utensils" />
+        </div>
+      </div>
+
       {openEdit && <EditForm />}
       <div className="food__display_wrapper">
         {values?.map((value) => {
@@ -22,6 +30,9 @@ function FoodDisplay() {
                 <button type="button" onClick={() => editValues(value)}>
                   edit
                 </button>
+              </div>
+              <div className="readmore">
+                <button type="button">READ MORE</button>
               </div>
             </div>
           );
