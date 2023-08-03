@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDataContext } from '../../constext/DataContext';
 import './foodDisplay.css';
 import EditForm from '../EditForm/EditForm';
 
 function FoodDisplay() {
   const { values, editValues, openEdit } = useDataContext();
+  const navigate = useNavigate();
 
   return (
     <div className="foodDisplay">
@@ -32,7 +34,12 @@ function FoodDisplay() {
                 </button>
               </div>
               <div className="readmore">
-                <button type="button">READ MORE</button>
+                <button
+                  type="button"
+                  onClick={() => navigate(`/fooddescription/${value?.id}`)}
+                >
+                  READ MORE
+                </button>
               </div>
             </div>
           );

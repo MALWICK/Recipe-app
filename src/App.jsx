@@ -12,8 +12,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="food" element={<Food />} />
-            <Route path="fooddescription" element={<FoodDescription />} />
+            <Route path="/food" element={<Food />} />
+            <Route path="/fooddescription/:id" element={<FoodDescription />} />
           </Routes>
         </BrowserRouter>
       </DataProvider>

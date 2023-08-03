@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { createContext, useState, useEffect, useContext } from 'react';
+/* import { useNavigate } from 'react-router-dom'; */
 
 const DataContext = createContext({});
 const itemsForm = () => {
@@ -17,6 +18,7 @@ export function DataProvider({ children }) {
   const [openEdit, setOpenEdit] = useState(false);
   const [favorite] = useState('no');
   const [editFood, setEditFood] = useState('');
+  const [disVal, setDisVal] = useState('');
 
   useEffect(() => {
     if (values.length !== 0) {
@@ -39,6 +41,15 @@ export function DataProvider({ children }) {
   const editValues = (val) => {
     setEditFood(val);
     setOpenEdit(true);
+  };
+
+  const getReadMoreVal = (val) => {
+    console.log(val);
+    console.log(val.id);
+    setDisVal(val);
+    /* useNavigate('/fooddescription', { state: val }); */
+
+    console.log('idiot');
   };
 
   const handleSubmit = (e) => {
@@ -69,6 +80,8 @@ export function DataProvider({ children }) {
         closeEditform,
         openEdit,
         setOpenEdit,
+        getReadMoreVal,
+        disVal,
       }}
     >
       {children}
