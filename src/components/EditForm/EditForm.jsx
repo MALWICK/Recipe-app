@@ -54,7 +54,7 @@ function EditForm() {
             <div className="foodDesc">
               <p>Enter food description</p>
             </div>
-            <input
+            <textarea
               type="text"
               placeholder="food Description"
               name="description"

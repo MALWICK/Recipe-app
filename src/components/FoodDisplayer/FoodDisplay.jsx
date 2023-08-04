@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDataContext } from '../../constext/DataContext';
 import './foodDisplay.css';
-import EditForm from '../EditForm/EditForm';
+/* import EditForm from '../EditForm/EditForm'; */
 
 function FoodDisplay() {
-  const { values, editValues, openEdit } = useDataContext();
+  const { values } = useDataContext();
   const navigate = useNavigate();
 
   return (
@@ -19,7 +19,7 @@ function FoodDisplay() {
         </div>
       </div>
 
-      {openEdit && <EditForm />}
+      {/*  {openEdit && <EditForm />} */}
       <div className="food__display_wrapper">
         {values?.map((value) => {
           return (
@@ -29,9 +29,9 @@ function FoodDisplay() {
               </div>
               <div className="display__actions">
                 <p> {value?.name}</p>
-                <button type="button" onClick={() => editValues(value)}>
+                {/* <button type="button" onClick={() => editValues(value)}>
                   edit
-                </button>
+                </button> */}
               </div>
               <div className="readmore">
                 <button

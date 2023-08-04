@@ -16,7 +16,7 @@ export function DataProvider({ children }) {
   const [values, setValues] = useState(itemsForm());
   const [open, setOpen] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
-  const [favorite] = useState('no');
+  const [favourite, setFavourite] = useState('false');
   const [editFood, setEditFood] = useState('');
   const [disVal, setDisVal] = useState('');
 
@@ -52,6 +52,10 @@ export function DataProvider({ children }) {
     console.log('idiot');
   };
 
+  const lovedFavourite = () => {
+    setFavourite(!favourite);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const filtered = values.filter((value) => value.id === editFood.id);
@@ -59,7 +63,7 @@ export function DataProvider({ children }) {
     const id = Date.now();
     const data = new FormData(e.currentTarget);
     const formData = Object.fromEntries(data.entries());
-    const itemValues = { ...formData, id, favorite, filtered };
+    const itemValues = { ...formData, id, favourite, filtered };
     const update = [...filtered, itemValues];
     setValues((prev) => [...prev, itemValues]);
     localStorage.setItem('items', JSON.stringify(update));
@@ -74,7 +78,7 @@ export function DataProvider({ children }) {
         open,
         setOpen,
         ClosePup,
-        favorite,
+        favourite,
         handleSubmit,
         editFood,
         closeEditform,
@@ -82,6 +86,8 @@ export function DataProvider({ children }) {
         setOpenEdit,
         getReadMoreVal,
         disVal,
+        setFavourite,
+        lovedFavourite,
       }}
     >
       {children}
