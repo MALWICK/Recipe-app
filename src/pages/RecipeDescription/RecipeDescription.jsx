@@ -8,7 +8,7 @@ import EditForm from '../../components/EditForm/EditForm';
 function RecipeDescription() {
   const [food, setFood] = React.useState(null);
   const { id } = useParams();
-  const { editValues, openEdit } = useDataContext();
+  const { editValues, openEdit, deleteRecipe } = useDataContext();
 
   React.useEffect(() => {
     const foodItem = JSON.parse(localStorage.getItem('item'))?.find(
@@ -84,7 +84,11 @@ function RecipeDescription() {
                     <i className="fa-solid fa-pen-to-square" />
                   </button>
                   <button type="button" className="delete__recipe">
-                    <i className="fa-solid fa-trash" />
+                    <i
+                      className="fa-solid fa-trash"
+                      aria-hidden
+                      onClick={() => deleteRecipe(food?.id)}
+                    />
                   </button>
                   <span className="cart">Share</span>
                 </div>

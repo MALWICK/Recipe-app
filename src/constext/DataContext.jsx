@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { createContext, useState, useEffect, useContext } from 'react';
-/* import { useNavigate } from 'react-router-dom'; */
 
 const DataContext = createContext({});
 const itemsForm = () => {
@@ -56,6 +55,15 @@ export function DataProvider({ children }) {
     setFavourite(!favourite);
   };
 
+  const deleteRecipe = (id) => {
+    console.log(id);
+    console.log('idiot');
+    const filtered = values.filter((value) => value.id !== id);
+    localStorage.setItem('item', JSON.stringify(filtered));
+    console.log(filtered);
+    window.location.href = '/food';
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const filtered = values.filter((value) => value.id === editFood.id);
@@ -66,7 +74,7 @@ export function DataProvider({ children }) {
     const itemValues = { ...formData, id, favourite, filtered };
     const update = [...filtered, itemValues];
     setValues((prev) => [...prev, itemValues]);
-    localStorage.setItem('items', JSON.stringify(update));
+    localStorage.setItem('item', JSON.stringify(update));
     setOpen(false);
   };
   return (
@@ -88,6 +96,7 @@ export function DataProvider({ children }) {
         disVal,
         setFavourite,
         lovedFavourite,
+        deleteRecipe,
       }}
     >
       {children}
