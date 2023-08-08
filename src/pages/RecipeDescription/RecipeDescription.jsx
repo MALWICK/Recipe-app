@@ -90,7 +90,10 @@ function RecipeDescription() {
                       onClick={() => deleteRecipe(food?.id)}
                     />
                   </button>
-                  <span className="cart">Share</span>
+                  <span className="carti">
+                    Share
+                    <i className="fa-solid fa-square-share-nodes" />
+                  </span>
                 </div>
               </div>
             </div>

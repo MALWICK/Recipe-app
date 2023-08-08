@@ -5,7 +5,7 @@ import './foodDisplay.css';
 /* import EditForm from '../EditForm/EditForm'; */
 
 function FoodDisplay() {
-  const { values } = useDataContext();
+  const { values, search } = useDataContext();
   const navigate = useNavigate();
 
   return (
@@ -21,29 +21,35 @@ function FoodDisplay() {
 
       {/*  {openEdit && <EditForm />} */}
       <div className="food__display_wrapper">
-        {values?.map((value) => {
-          return (
-            <div key={value?.id} className="food__display">
-              <div className="display__imgcont">
-                <img src={value?.imageUrl} alt="food" />
-              </div>
-              <div className="display__actions">
-                <p> {value?.name}</p>
-                {/* <button type="button" onClick={() => editValues(value)}>
+        {values
+          ?.filter((value) => {
+            return search.toLowerCase() === ''
+              ? value
+              : value.name.toLowerCase();
+          })
+          .map((value) => {
+            return (
+              <div key={value?.id} className="food__display">
+                <div className="display__imgcont">
+                  <img src={value?.imageUrl} alt="food" />
+                </div>
+                <div className="display__actions">
+                  <p> {value?.name}</p>
+                  {/* <button type="button" onClick={() => editValues(value)}>
                   edit
                 </button> */}
+                </div>
+                <div className="readmore">
+                  <button
+                    type="button"
+                    onClick={() => navigate(`/fooddescription/${value?.id}`)}
+                  >
+                    READ MORE
+                  </button>
+                </div>
               </div>
-              <div className="readmore">
-                <button
-                  type="button"
-                  onClick={() => navigate(`/fooddescription/${value?.id}`)}
-                >
-                  READ MORE
-                </button>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );

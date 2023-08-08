@@ -18,6 +18,7 @@ export function DataProvider({ children }) {
   const [favourite, setFavourite] = useState('false');
   const [editFood, setEditFood] = useState('');
   const [disVal, setDisVal] = useState('');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     if (values.length !== 0) {
@@ -43,12 +44,10 @@ export function DataProvider({ children }) {
   };
 
   const getReadMoreVal = (val) => {
-    console.log(val);
-    console.log(val.id);
+    /*   console.log(val);
+    console.log(val.id); */
     setDisVal(val);
-    /* useNavigate('/fooddescription', { state: val }); */
-
-    console.log('idiot');
+    /*  console.log('idiot'); */
   };
 
   const lovedFavourite = () => {
@@ -97,6 +96,8 @@ export function DataProvider({ children }) {
         setFavourite,
         lovedFavourite,
         deleteRecipe,
+        search,
+        setSearch,
       }}
     >
       {children}
