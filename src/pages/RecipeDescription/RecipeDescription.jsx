@@ -1,6 +1,6 @@
 import React from 'react';
 import './reciepeDescription.css';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDataContext } from '../../constext/DataContext';
 import SearchNavber from '../../components/nav/searchNavber';
 import EditForm from '../../components/EditForm/EditForm';
@@ -33,6 +33,13 @@ function RecipeDescription() {
             Food <i className="fa-sharp fa-solid fa-caret-right" />
           </p>
           <p className="foods__names">{food?.name}</p>
+        </div>
+      </div>
+      <div className="back__toFood">
+        <div className="back__tofoodinner">
+          <Link to="/food">
+            <button type="button">BACK to food </button>
+          </Link>
         </div>
       </div>
       {food && (

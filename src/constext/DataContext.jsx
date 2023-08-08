@@ -51,7 +51,7 @@ export function DataProvider({ children }) {
   };
 
   const lovedFavourite = () => {
-    setFavourite(!favourite);
+    setFavourite();
   };
 
   const deleteRecipe = (id) => {
