@@ -25,7 +25,7 @@ function FoodDisplay() {
           ?.filter((value) => {
             return search.toLowerCase() === ''
               ? value
-              : value.name.toLowerCase();
+              : value.name.toLowerCase().includes(search.toLowerCase());
           })
           .map((value) => {
             return (
@@ -35,9 +35,6 @@ function FoodDisplay() {
                 </div>
                 <div className="display__actions">
                   <p className="value__name"> {value?.name}</p>
-                  {/* <button type="button" onClick={() => editValues(value)}>
-                  edit
-                </button> */}
                 </div>
                 <div className="readmore">
                   <button
