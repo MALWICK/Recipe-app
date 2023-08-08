@@ -34,13 +34,14 @@ function FoodDisplay() {
                   <img src={value?.imageUrl} alt="food" />
                 </div>
                 <div className="display__actions">
-                  <p> {value?.name}</p>
+                  <p className="value__name"> {value?.name}</p>
                   {/* <button type="button" onClick={() => editValues(value)}>
                   edit
                 </button> */}
                 </div>
                 <div className="readmore">
                   <button
+                    className="readmore-button"
                     type="button"
                     onClick={() => navigate(`/fooddescription/${value?.id}`)}
                   >

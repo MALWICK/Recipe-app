@@ -81,4 +81,22 @@ i {
 .display__actions p {
   font-size: 22px;
   font-weight: 700;
+  text-align: center;
+}
+
+.readmore-button {
+  width: 150px;
+  height: 45px;
+  background-color: black;
+  color: goldenrod;
+  border: none;
+  border-radius: 0.5rem;
+  margin-bottom: 3.4%;
+  cursor: pointer;
+}
+
+.readmore-button:hover {
+  background-color: #272727;
+  color: gold;
+  transition: 0.3s ease-in-out;
 }
