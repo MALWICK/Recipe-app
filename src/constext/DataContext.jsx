@@ -55,8 +55,6 @@ export function DataProvider({ children }) {
   };
 
   const deleteRecipe = (id) => {
-    console.log(id);
-    console.log('idiot');
     const filtered = values.filter((value) => value.id !== id);
     localStorage.setItem('item', JSON.stringify(filtered));
     console.log(filtered);
