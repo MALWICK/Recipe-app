@@ -10,7 +10,6 @@ function EditForm() {
     const data = new FormData(e.currentTarget);
     const items = Object.fromEntries(data.entries());
     const food = values.find((item) => item.id === editFood.id);
-    console.log(food.id);
     const newItem = { ...food, ...items };
     const operation = values.filter((item) => item.id !== newItem.id);
     setValues([...operation, newItem]);

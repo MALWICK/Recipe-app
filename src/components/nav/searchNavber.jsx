@@ -3,8 +3,7 @@ import './searchBar.css';
 import { useDataContext } from '../../constext/DataContext';
 
 function searchNavber() {
-  const { search, setSearch } = useDataContext();
-  console.log(search);
+  const { setSearch } = useDataContext();
   return (
     <div className="searchNavber">
       <div className="container">

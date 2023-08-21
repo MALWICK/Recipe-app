@@ -25,8 +25,6 @@ export function DataProvider({ children }) {
       localStorage.setItem('item', JSON.stringify(values));
     }
   }, [values]);
-  /* 
-  console.log(values); */
 
   const ClosePup = (e) => {
     e.preventDefault();
@@ -44,10 +42,7 @@ export function DataProvider({ children }) {
   };
 
   const getReadMoreVal = (val) => {
-    /*   console.log(val);
-    console.log(val.id); */
     setDisVal(val);
-    /*  console.log('idiot'); */
   };
 
   const lovedFavourite = () => {
@@ -57,7 +52,6 @@ export function DataProvider({ children }) {
   const deleteRecipe = (id) => {
     const filtered = values.filter((value) => value.id !== id);
     localStorage.setItem('item', JSON.stringify(filtered));
-    console.log(filtered);
     window.location.href = '/food';
   };
 
