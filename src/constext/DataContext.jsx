@@ -89,6 +89,7 @@ export function DataProvider({ children }) {
         lovedFavourite,
         deleteRecipe,
         search,
+
         setSearch,
       }}
     >
