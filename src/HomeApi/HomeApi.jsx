@@ -1,5 +1,5 @@
 import React from 'react';
-import Vegge from './Popular.jsx/Vegge/Vegge';
+import Vegge from './Vegge/Vegge';
 import Popular from './Popular.jsx/Popular';
 
 function HomeApi() {

@@ -4,6 +4,7 @@ import Food from './pages/Food/Food';
 import FoodDescription from './pages/RecipeDescription/RecipeDescription';
 import { DataProvider } from './constext/DataContext';
 import Home from './pages/Home/Home';
+import HomeApi from './HomeApi/HomeApi';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/food" element={<Food />} />
             <Route path="/fooddescription/:id" element={<FoodDescription />} />
+            <Route path="FetchedFood" element={<HomeApi />} />
           </Routes>
         </BrowserRouter>
       </DataProvider>
