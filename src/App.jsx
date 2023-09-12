@@ -15,7 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/food" element={<Food />} />
             <Route path="/fooddescription/:id" element={<FoodDescription />} />
-            <Route path="FetchedFood" element={<HomeApi />} />
+            <Route path="/fetchedFood" element={<HomeApi />} />
           </Routes>
         </BrowserRouter>
       </DataProvider>

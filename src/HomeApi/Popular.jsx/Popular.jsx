@@ -7,7 +7,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          'https://www.themealdb.com/api/json/v1/1/search.php?f=a'
+          'https://www.themealdb.com/api/json/v1/1/random.php'
         );
         const data = await response.json();
         setMeals(data.meals);
@@ -19,14 +19,18 @@ function App() {
     fetchData();
   }, []);
 
+  console.log(meals);
+
   return (
     <div>
       <h1>Meals</h1>
-      <ul>
-        {meals.map((meal) => (
+
+      {meals.map((meal) => (
+        <ul>
           <li key={meal.idMeal}>{meal.strMeal}</li>
-        ))}
-      </ul>
+          <img src={meal.strMealThumb} alt="meal" className="rounded-lg" />
+        </ul>
+      ))}
     </div>
   );
 }
