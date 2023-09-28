@@ -23,21 +23,22 @@ function App() {
   console.log(meals);
 
   return (
-    <div className={Styles.recom}>
-      <div className="shadow">
-        {meals.map((meal) => (
-          <ul>
-            <h1 className="text-white" key={meal.idMeal}>
+    <div>
+      {meals.map((meal) => (
+        <div className={Styles.recom}>
+          <div className={Styles.recom__inner}>
+            <div className={Styles.overlay} />
+            <h1 className={Styles.topleft} key={meal.idMeal}>
               {meal.strMeal}
             </h1>
             <img
-              className={Styles.imgmeal}
               src={meal.strMealThumb}
               alt="meal"
+              className={Styles.imgmeal}
             />
-          </ul>
-        ))}
-      </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
