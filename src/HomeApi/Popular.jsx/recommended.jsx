@@ -30,7 +30,11 @@ function App() {
             <h1 className="text-white" key={meal.idMeal}>
               {meal.strMeal}
             </h1>
-            <img src={meal.strMealThumb} alt="meal" className="rounded-lg" />
+            <img
+              className={Styles.imgmeal}
+              src={meal.strMealThumb}
+              alt="meal"
+            />
           </ul>
         ))}
       </div>
