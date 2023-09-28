@@ -3,5 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 3px;
+  overflow-x: scroll;
 }

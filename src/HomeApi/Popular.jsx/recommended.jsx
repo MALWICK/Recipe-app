@@ -7,6 +7,14 @@ function recommended() {
     <div>
       <div className="recommeneditems">
         <RecommendedItem />
+        <RecommendedItem />
+        <RecommendedItem />
+        <RecommendedItem />
+        <RecommendedItem />
+        <RecommendedItem />
+        <RecommendedItem />
+        <RecommendedItem />
+        <RecommendedItem />
       </div>
     </div>
   );
