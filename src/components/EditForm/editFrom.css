@@ -12,9 +12,9 @@
 
 .foodform {
   width: 500px;
-  padding: 0.9%;
+  padding: 0.4%;
   border-radius: 0.9rem;
-  background-color: #ecd3d3;
+  background-color: #ece9e2;
 }
 
 .form {
@@ -26,6 +26,7 @@
   flex-direction: column;
   border-radius: 0.4rem;
   background-color: white;
+  padding: 1%;
 }
 
 .food__name {
@@ -36,14 +37,6 @@
 }
 
 .food__name input {
-  width: 100%;
-  padding: 9px;
-  outline: none;
-  border: 1px solid grey;
-  border-radius: 0.4rem;
-}
-
-.food__name textarea {
   width: 100%;
   padding: 9px;
   outline: none;
@@ -94,7 +87,7 @@
   font-size: 21px;
 }
 
-.desc textarea {
+.desc input {
   width: 100%;
   padding: 9px;
   outline: none;
@@ -126,16 +119,36 @@
 
 .submit {
   width: 100px;
-  padding: 13px;
+  padding: 10px;
   border-radius: 0.5rem;
   outline: none;
   border: none;
+  font-size: 18px;
+  color: white;
+  background-color: green;
+  cursor: pointer;
 }
 
 .cancel {
   width: 100px;
-  padding: 13px;
+  padding: 10px;
   border-radius: 0.5rem;
   outline: none;
   border: none;
+  font-size: 18px;
+  background-color: #911717;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  .foodform {
+    width: 391px;
+  }
+}
+
+@media (max-width: 325px) {
+  .foodform {
+    width: 300px;
+  }
 }

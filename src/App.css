@@ -9,7 +9,7 @@
 }
 
 .app__bg {
-  background: url("../src/assets/bg.png");
+  background: url('../src/assets/bg.png');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
@@ -54,17 +54,17 @@
 
 .custom__button {
   background-color: var(--color-crimson);
-    color: var(--color-black);
-    font-family: var(--font-base);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 28px;
-    font-size: 16px;
-    padding: 0.5rem 1.5rem;
-    border-radius: 1px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  color: var(--color-black);
+  font-family: var(--font-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 16px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .p__cormorant {
@@ -151,7 +151,7 @@
   .section__padding {
     padding: 4rem 2rem;
   }
-  
+
   .p__cormorant {
     font-size: 21px;
   }

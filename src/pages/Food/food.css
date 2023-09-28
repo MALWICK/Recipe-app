@@ -1,0 +1,31 @@
+.foodContainer {
+  width: 100%;
+  min-height: 100vh;
+  /*  background-color: #f5f4f9; */
+  background-color: black;
+}
+
+.food-container__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button-conatiner {
+  width: 90%;
+  height: 70px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1%;
+  /*  background-color: red; */
+}
+
+@media (max-width: 768px) {
+  .foodContainer {
+    height: fit-content;
+  }
+}

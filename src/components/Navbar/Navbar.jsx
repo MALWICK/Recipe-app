@@ -1,6 +1,7 @@
 import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import images from '../../constants/images';
 
 import './Navbar.css';
@@ -34,9 +35,11 @@ function Navbar() {
           Log In / Registration
         </a>
         <div />
-        <a href="/" className="p__opensans">
-          Create Meal
-        </a>
+        <Link to="/food" className="p__opensans">
+          <a href="/" className="p__opensans">
+            Create Meal
+          </a>
+        </Link>
       </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu
