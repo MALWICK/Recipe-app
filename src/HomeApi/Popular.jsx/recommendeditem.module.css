@@ -5,6 +5,7 @@
   background: rgb(27 27 27 / 85%);
   position: relative;
   border-radius: 0.8rem;
+  cursor: pointer;
 }
 
 .imgmeal {
