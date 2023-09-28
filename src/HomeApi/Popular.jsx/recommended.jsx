@@ -25,6 +25,7 @@ function App() {
   return (
     <div className={Styles.recom}>
       <div className="shadow">
+        <h1 className="text-white">er</h1>
         {meals.map((meal) => (
           <ul>
             <li key={meal.idMeal}>{meal.strMeal}</li>
