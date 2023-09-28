@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+.recom:hover {
+  color: #706f6f;
+}
+
 .imgmeal {
   width: 100%;
   height: 100%;
@@ -44,4 +48,5 @@
 
 .overlay:hover {
   background-color: rgba(197, 194, 194, 0.041);
+  color: rgb(141, 139, 139);
 }
