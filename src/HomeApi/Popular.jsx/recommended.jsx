@@ -24,14 +24,14 @@ function App() {
 
   return (
     <div className={Styles.recom}>
-      <h1>Meals</h1>
-
-      {meals.map((meal) => (
-        <ul>
-          <li key={meal.idMeal}>{meal.strMeal}</li>
-          <img src={meal.strMealThumb} alt="meal" className="rounded-lg" />
-        </ul>
-      ))}
+      <div className="shadow">
+        {meals.map((meal) => (
+          <ul>
+            <li key={meal.idMeal}>{meal.strMeal}</li>
+            <img src={meal.strMealThumb} alt="meal" className="rounded-lg" />
+          </ul>
+        ))}
+      </div>
     </div>
   );
 }
