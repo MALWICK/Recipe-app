@@ -1,12 +1,12 @@
 import React from 'react';
 import Vegge from './Vegge/Vegge';
-import Popular from './Popular.jsx/Popular';
+import Recommended from './Popular.jsx/recommended';
 
 function HomeApi() {
   return (
     <div>
       <Vegge />
-      <Popular />
+      <Recommended />
     </div>
   );
 }
