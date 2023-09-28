@@ -7,11 +7,6 @@ function HomeApi() {
     <div>
       <Vegge />
       <Recommended />
-      <Recommended />
-      <Recommended />
-      <Recommended />
-      <Recommended />
-      <Recommended />
     </div>
   );
 }
