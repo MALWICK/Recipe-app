@@ -1,4 +1,10 @@
 .recom {
   width: 200px;
+  height: 200px;
   margin: 0.5rem;
+}
+
+.shadow {
+  width: 100%;
+  background: linear-gradient(180deg, rgb(27 27 27 / 85%), transparent);
 }
