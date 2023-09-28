@@ -23,7 +23,7 @@ function App() {
   console.log(meals);
 
   return (
-    <div>
+    <div className={Styles.recom}>
       <h1>Meals</h1>
 
       {meals.map((meal) => (
