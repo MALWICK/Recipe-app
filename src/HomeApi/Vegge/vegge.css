@@ -6,8 +6,11 @@
   background-repeat: no-repeat;
 }
 
-.back-image {
+.vegge__container {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

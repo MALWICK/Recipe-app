@@ -5,7 +5,7 @@ import FoodDescription from './pages/RecipeDescription/RecipeDescription';
 import { DataProvider } from './constext/DataContext';
 import Home from './pages/Home/Home';
 import HomeApi from './HomeApi/HomeApi';
-import TheDescription from './pages/recipeURL';
+import MealDescription from './pages/MealDescription';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
             <Route path="/food" element={<Food />} />
             <Route path="/fooddescription/:id" element={<FoodDescription />} />
             <Route path="/fetchedFood" element={<HomeApi />} />
-            <Route path="/theDescription" element={<TheDescription />} />
+            <Route path="/meal-description/:idMeal" element={MealDescription} />
           </Routes>
         </BrowserRouter>
       </DataProvider>
