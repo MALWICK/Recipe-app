@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function Vegge() {
   const navigate = useNavigate();
   const [mainData, setMainData] = useState([]);
+  console.log(mainData, 'jakas');
 
   useEffect(() => {
     axios
@@ -16,14 +17,18 @@ function Vegge() {
       });
   }, []);
 
+  const handleMealClick = (meal) => {
+    navigate(`/meal-description/${meal.idMeal}`);
+  };
+
   return (
     <div className="vegge">
-      {mainData.map((meal) => (
+      {mainData?.map((meal) => (
         <div
           className="vegge__container"
           key={meal.idMeal}
           style={{ backgroundImage: `url(${meal.strMealThumb})` }}
-          onClick={() => navigate(`/meal-description/${meal.idMeal}`)}
+          onClick={() => handleMealClick(meal)}
           aria-hidden="true"
         >
           <p>ff</p>
