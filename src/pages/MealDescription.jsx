@@ -1,48 +1,31 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
 
-function MealDescription() {
-  const { idMeal } = useParams();
-  const [mealDetails, setMealDetails] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+function MealDescription({ match }) {
+  const [meal, setMeal] = useState([]);
+  console.log(meal);
 
+  const mealId = match.params.id;
+
+  // Fetch the meal details based on the mealId
   useEffect(() => {
-    // Reset the loader after 9 seconds
-    const loaderTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 9000);
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+      .then((response) => response.json())
+      .then((data) => setMeal(data.meals[0]))
+      .catch((error) => console.log(error));
+  }, [mealId]);
 
-    axios
-      .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
-      .then((response) => {
-        setMealDetails(response.data.meals[0]);
-        clearTimeout(loaderTimeout); // Cancel the loader timeout if the data is fetched before 9 seconds
-      })
-      .catch((error) => {
-        console.error('Error fetching meal details:', error);
-        setIsLoading(false); // Stop the loader if an error occurs
-      });
+  console.log(meal);
 
-    // Clean up the timeout when the component unmounts
-    return () => clearTimeout(loaderTimeout);
-  }, [idMeal]);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
+  // Render the meal details
   return (
     <div>
-      <h1>Meal Description</h1>
-      <h2>ID: {idMeal}</h2>
-      {mealDetails && (
-        <>
-          <p>Meal Name: {mealDetails.strMealThumb}</p>
-          <p>Category: {mealDetails.strInstructions}</p>
-          {/* Display other meal details */}
-        </>
-      )}
+      <div>
+        <h2>{meal.strMeal}</h2>
+        <img src={meal.strMealThumb} alt={meal.strMeal} />
+        <p>{meal.strInstructions}</p>
+        <h3>Ingredients:</h3>
+      </div>
     </div>
   );
 }
