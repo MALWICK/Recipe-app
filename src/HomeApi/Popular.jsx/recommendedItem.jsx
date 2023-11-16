@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Styles from './recommendeditem.module.css';
 
 const fetchData = async () => {
@@ -25,6 +25,7 @@ function RecommendedItem() {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errors, setErrors] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -50,29 +51,33 @@ function RecommendedItem() {
     );
   }
 
-  /*   const descriptionNavigation = (mealId) => {
+  const descriptionNavigation = (mealId) => {
+    console.log(mealId, 'mealid');
     navigate(`/meal-description/${mealId}`);
-  }; */
+  };
 
   return (
     <div>
       {errors && <div className="error">{errors.message}</div>}
       {meals.length > 0 ? (
         meals.map((meal) => (
-          <Link to={`/meal-description/${meal.idMeal}`}>
-            <div className={Styles.recom} key={meal.idMeal} aria-hidden="true">
-              <div className={Styles.recom__inner}>
-                <div className={Styles.overlay} />
-                <h1 className={Styles.topleft}>{meal.strMeal}</h1>
-                <img
-                  src={meal.strMealThumb}
-                  alt="meal"
-                  className={Styles.imgmeal}
-                  loading="lazy"
-                />
-              </div>
+          <div
+            className={Styles.recom}
+            key={meal.idMeal}
+            onClick={() => descriptionNavigation(meal.idMeal)}
+            aria-hidden="true"
+          >
+            <div className={Styles.recom__inner}>
+              <div className={Styles.overlay} />
+              <h1 className={Styles.topleft}>{meal.strMeal}</h1>
+              <img
+                src={meal.strMealThumb}
+                alt="meal"
+                className={Styles.imgmeal}
+                loading="lazy"
+              />
             </div>
-          </Link>
+          </div>
         ))
       ) : (
         <div>No meals found.</div>

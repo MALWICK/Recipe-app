@@ -1,31 +1,64 @@
-/* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-function MealDescription({ match }) {
-  const [meal, setMeal] = useState([]);
-  console.log(meal);
+function MealDescription() {
+  const { mealId } = useParams();
+  const [meal, setMeal] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const mealId = match.params.id;
-
-  // Fetch the meal details based on the mealId
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-      .then((response) => response.json())
-      .then((data) => setMeal(data.meals[0]))
-      .catch((error) => console.log(error));
+    const fetchMeal = async () => {
+      try {
+        const response = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
+        );
+        const data = await response.json();
+        if (data.meals && data.meals.length > 0) {
+          setMeal(data.meals[0]);
+        } else {
+          setError('Meal not found');
+        }
+        setIsLoading(false);
+      } catch (errorr) {
+        console.error('Error:', errorr);
+        setError('An error occurred while fetching the meal');
+        setIsLoading(false);
+      }
+    };
+
+    fetchMeal();
   }, [mealId]);
 
-  console.log(meal);
+  if (isLoading) {
+    return (
+      <div>
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
 
-  // Render the meal details
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!meal) {
+    return <div>No meal found.</div>;
+  }
+
   return (
     <div>
-      <div>
-        <h2>{meal.strMeal}</h2>
-        <img src={meal.strMealThumb} alt={meal.strMeal} />
-        <p>{meal.strInstructions}</p>
-        <h3>Ingredients:</h3>
-      </div>
+      <h1>{meal.strMeal}</h1>
+      <img src={meal.strMealThumb} alt="meal" />
+      <p>{meal.strInstructions}</p>
+      <h2>Ingredients:</h2>
+      <ul>
+        {Object.entries(meal)
+          .filter(([key, value]) => key.startsWith('strIngredient') && value)
+          .map(([key, value]) => (
+            <li key={key}>{value}</li>
+          ))}
+      </ul>
     </div>
   );
 }
