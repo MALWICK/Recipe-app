@@ -13,8 +13,6 @@ function recommended() {
         <RecommendedItem />
         <RecommendedItem />
         <RecommendedItem />
-        <RecommendedItem />
-        {/*  <RecommendedItem /> */}
       </div>
     </div>
   );
