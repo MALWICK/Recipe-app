@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 
 function MealDescription() {
   const { mealId } = useParams();
@@ -59,6 +60,14 @@ function MealDescription() {
             <li key={key}>{value}</li>
           ))}
       </ul>
+      <div className="player-wrapper">
+        <ReactPlayer
+          url={meal.strYoutube}
+          className="react-player"
+          width="100%"
+          height="100%"
+        />
+      </div>
     </div>
   );
 }
