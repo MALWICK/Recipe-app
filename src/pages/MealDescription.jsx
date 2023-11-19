@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
@@ -47,6 +48,17 @@ function MealDescription() {
     return <div>No meal found.</div>;
   }
 
+  const ingredients = Object.entries(meal)
+    .filter(([key, value]) => key.startsWith('strIngredient') && value)
+    .map(([key, value]) => {
+      const measureKey = `strMeasure${key.slice(13)}`;
+      const measure = meal[measureKey];
+      return {
+        ingredient: value,
+        measure,
+      };
+    });
+
   return (
     <div>
       <h1>{meal.strMeal}</h1>
@@ -54,11 +66,11 @@ function MealDescription() {
       <p>{meal.strInstructions}</p>
       <h2>Ingredients:</h2>
       <ul>
-        {Object.entries(meal)
-          .filter(([key, value]) => key.startsWith('strIngredient') && value)
-          .map(([key, value]) => (
-            <li key={key}>{value}</li>
-          ))}
+        {ingredients.map(({ ingredient, measure }, index) => (
+          <li key={index}>
+            {ingredient} - {measure}
+          </li>
+        ))}
       </ul>
       <div className="player-wrapper">
         <ReactPlayer
