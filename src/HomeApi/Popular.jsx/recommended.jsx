@@ -4,7 +4,7 @@ import './recommended.css';
 
 function recommended() {
   return (
-    <div>
+    <div className="recommended__container">
       <div className="recommeneditems">
         <RecommendedItem />
         <RecommendedItem />
