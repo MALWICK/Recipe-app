@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
+import './MealDescription.css';
 
 function MealDescription() {
   const { mealId } = useParams();
@@ -32,6 +33,7 @@ function MealDescription() {
     fetchMeal();
   }, [mealId]);
 
+  console.log(meal);
   if (isLoading) {
     return (
       <div>
@@ -60,25 +62,41 @@ function MealDescription() {
     });
 
   return (
-    <div>
-      <h1>{meal.strMeal}</h1>
-      <img src={meal.strMealThumb} alt="meal" />
-      <p>{meal.strInstructions}</p>
-      <h2>Ingredients:</h2>
-      <ul>
-        {ingredients.map(({ ingredient, measure }, index) => (
-          <li key={index}>
-            {ingredient} - {measure}
-          </li>
-        ))}
-      </ul>
-      <div className="player-wrapper">
-        <ReactPlayer
-          url={meal.strYoutube}
-          className="react-player"
-          width="100%"
-          height="100%"
-        />
+    <div className="mealsdescription">
+      <div className="mealDescription__container">
+        <div className="back__container">
+          <button type="button" className="back__btn">
+            <i className="fa-solid fa-arrow-left" />
+            Back
+          </button>
+        </div>
+        <div className="meal__info">
+          <img src={meal.strMealThumb} alt="meal" />
+
+          <div className="fooddetails-container">
+            <h1>{meal.strMeal}</h1>
+            <span className="food__origin">
+              Origin: <span className="bluetext">{meal.strArea}</span>
+            </span>
+            <h2 className="ingre">Ingredients</h2>
+            <ul>
+              {ingredients.map(({ ingredient, measure }, index) => (
+                <li key={index}>
+                  {ingredient} - {measure}
+                </li>
+              ))}
+            </ul>
+            <p>{meal.strInstructions}</p>
+            <div className="player-wrapper">
+              <ReactPlayer
+                url={meal.strYoutube}
+                className="react-player"
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

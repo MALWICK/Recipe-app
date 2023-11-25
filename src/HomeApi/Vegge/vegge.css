@@ -12,6 +12,7 @@
 
 .vegge h1 {
   color: goldenrod;
+  font-weight: bold;
 }
 
 .vegge__container {

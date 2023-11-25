@@ -5,7 +5,7 @@ import FoodDescription from './pages/RecipeDescription/RecipeDescription';
 import { DataProvider } from './constext/DataContext';
 import Home from './pages/Home/Home';
 import HomeApi from './HomeApi/HomeApi';
-import MealDescription from './pages/MealDescription';
+import MealDescription from './pages/MealDescription/MealDescription';
 
 function App() {
   return (
