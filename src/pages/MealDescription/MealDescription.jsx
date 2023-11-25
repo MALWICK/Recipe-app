@@ -79,10 +79,10 @@ function MealDescription() {
               Origin: <span className="bluetext">{meal.strArea}</span>
             </span>
             <h2 className="ingre">Ingredients</h2>
-            <ul>
+            <ul className="lister">
               {ingredients.map(({ ingredient, measure }, index) => (
                 <li key={index}>
-                  {ingredient} - {measure}
+                  {ingredient} - <span className="lighttext">{measure}</span>
                 </li>
               ))}
             </ul>

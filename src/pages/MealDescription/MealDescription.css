@@ -75,3 +75,11 @@
   color: #0096ff;
   font-weight: bold;
 }
+
+.lister li {
+  list-style-type: none;
+}
+
+.lighttext {
+  color: rgb(73, 71, 71);
+}
