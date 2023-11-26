@@ -9,10 +9,14 @@ function catergory() {
       .then((data) => setCatogories(data.meals))
       .catch((error) => console.log(error));
   }, [2]);
-  console.log(categories);
+  /*  console.log(categories); */
   return (
     <div className="categories-container">
-      <p>changam</p>
+      {categories.map((mealsType) => (
+        <div className="category-holder" key={mealsType.strCategory}>
+          {mealsType.strCategory}
+        </div>
+      ))}
     </div>
   );
 }
