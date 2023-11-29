@@ -6,6 +6,7 @@ import { DataProvider } from './constext/DataContext';
 import Home from './pages/Home/Home';
 import HomeApi from './HomeApi/HomeApi';
 import MealDescription from './pages/MealDescription/MealDescription';
+import CategoryDescription from './pages/catergoryDescription/categoryDescription';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
               element={<MealDescription />}
             />
           </Routes>
+          <Route
+            path="/categoryDescription/:categoryName"
+            element={<CategoryDescription />}
+          />
         </BrowserRouter>
       </DataProvider>
     </div>
