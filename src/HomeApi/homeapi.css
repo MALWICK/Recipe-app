@@ -19,3 +19,23 @@
   justify-content: center;
   flex-direction: column;
 }
+
+@media (max-width: 700px) {
+  #_builder-form .field-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .menu-field-wrap:nth-child(n + 3):nth-child(-n + 6) {
+    width: 100% !important;
+    flex: 56% !important;
+}
+
+  #_builder-form > div > div:nth-child(6) > div > div > div {
+    width: 100% !important;
+  }
+
+  #_builder-form > div > div:nth-child(6) > div > div > div > button {
+    width: 100% !important;
+  }
+}

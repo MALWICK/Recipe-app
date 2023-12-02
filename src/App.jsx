@@ -22,11 +22,11 @@ function App() {
               path="/meal-description/:mealId"
               element={<MealDescription />}
             />
+            <Route
+              path="/categoryDescription/:categoryid"
+              element={<CategoryDescription />}
+            />
           </Routes>
-          <Route
-            path="/categoryDescription/:categoryName"
-            element={<CategoryDescription />}
-          />
         </BrowserRouter>
       </DataProvider>
     </div>

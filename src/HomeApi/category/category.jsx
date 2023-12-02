@@ -11,10 +11,13 @@ function catergory() {
       .then((response) => response.json())
       .then((data) => setCatogories(data.meals))
       .catch((error) => console.log(error));
-  }, [2]);
+  }, []);
 
-  const handleCategoryClick = (category) => {
-    navigate(`/categoryDescription/${category}`);
+  console.log(categories);
+
+  const handleCategoryClick = (strCategory) => {
+    console.log(strCategory, 'catergoryid');
+    /* navigate(`/categoryDescription/${strCategory}`); */
   };
   /*  console.log(categories); */
   return (
@@ -23,7 +26,7 @@ function catergory() {
         <div
           className="category-holder"
           key={mealsType.strCategory}
-          onClick={() => handleCategoryClick(catergory.strCategory)}
+          onClick={() => handleCategoryClick(categories.strCategory)}
           aria-hidden="true"
         >
           {mealsType.strCategory}
