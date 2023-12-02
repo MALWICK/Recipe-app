@@ -1,39 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './category.css';
 
-function catergory() {
-  const [categories, setCatogories] = useState([]);
+function Category() {
+  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://www.themealdb.com/api/json/v1/1/list.php?c=list')
-      .then((response) => response.json())
-      .then((data) => setCatogories(data.meals))
-      .catch((error) => console.log(error));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
+        );
+        setCategories(response.data?.meals);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  console.log(categories);
-
   const handleCategoryClick = (strCategory) => {
-    console.log(strCategory, 'catergoryid');
-    /* navigate(`/categoryDescription/${strCategory}`); */
+    navigate(`/categoryDescription/${strCategory}`);
   };
-  /*  console.log(categories); */
+
   return (
     <div className="categories-container">
-      {categories.map((mealsType) => (
+      {categories.map((category) => (
         <div
           className="category-holder"
-          key={mealsType.strCategory}
-          onClick={() => handleCategoryClick(categories.strCategory)}
+          key={category.strCategory}
+          onClick={() => handleCategoryClick(category.strCategory)}
           aria-hidden="true"
         >
-          {mealsType.strCategory}
+          {category.strCategory}
         </div>
       ))}
     </div>
   );
 }
 
-export default catergory;
+export default Category;

@@ -23,7 +23,7 @@ function App() {
               element={<MealDescription />}
             />
             <Route
-              path="/categoryDescription/:categoryid"
+              path="/categoryDescription/:category"
               element={<CategoryDescription />}
             />
           </Routes>

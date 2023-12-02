@@ -1,23 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-function categoryDescription() {
-  const { categoryid } = useParams();
-  const [dishes, setDishes] = useState(null);
-  console.log(dishes);
+function CategoryDescription() {
+  const { category } = useParams();
+  const [meals, setMeals] = useState([]);
 
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryid}`)
-      .then((response) => response.json())
-      .then((data) => setDishes(data.meals))
-      .catch((error) => console.log(error));
-  }, [categoryid]);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
+        );
+        setMeals(response.data?.meals);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, [category]);
+
   return (
     <div>
-      <p>iudsiuiusdiuuduide</p>
-      <p>idsiudijewio</p>
+      <h2>Category: {category}</h2>
+      <ul>
+        {meals.map((meal) => (
+          <li key={meal.idMeal}>{meal.strMeal}</li>
+        ))}
+      </ul>
     </div>
   );
 }
 
-export default categoryDescription;
+export default CategoryDescription;
