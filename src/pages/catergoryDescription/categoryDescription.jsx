@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import './categoryDescription.css';
 
 function CategoryDescription() {
   const { category } = useParams();
@@ -29,13 +30,15 @@ function CategoryDescription() {
 
   console.log(meals);
   return (
-    <div>
+    <div className="mealDescription-category">
       <h2>Category: {category}</h2>
-      <ul>
+      <ul className="categoryDescription-cont">
         {meals.map((meal) => (
-          <li key={meal.idMeal}>
-            <img src={meal.strMealThumb} alt="meal" />
-            {meal.strMeal}
+          <li className="category-holders" key={meal.idMeal}>
+            <div className="img-decript">
+              <img src={meal.strMealThumb} alt="meal" />
+            </div>
+            <span className="mealtitle"> {meal.strMeal}</span>
           </li>
         ))}
       </ul>

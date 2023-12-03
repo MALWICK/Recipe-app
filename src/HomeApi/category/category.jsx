@@ -5,6 +5,7 @@ import './category.css';
 
 function Category() {
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,13 +15,19 @@ function Category() {
           'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
         );
         setCategories(response.data?.meals);
+        setLoading(false);
       } catch (error) {
         console.log(error);
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; // Render a loader while fetching data
+  }
 
   const handleCategoryClick = (strCategory) => {
     navigate(`/categoryDescription/${strCategory}`);
