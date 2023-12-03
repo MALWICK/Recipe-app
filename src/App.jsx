@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import HomeApi from './HomeApi/HomeApi';
 import MealDescription from './pages/MealDescription/MealDescription';
 import CategoryDescription from './pages/catergoryDescription/categoryDescription';
+import FoodCategoryDescription from './pages/foodCategoryDescription/foodCategoryDescription';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
             <Route
               path="/categoryDescription/:category"
               element={<CategoryDescription />}
+            />
+            <Route
+              path="/foodCategoryDescription/:mealId"
+              element={<FoodCategoryDescription />}
             />
           </Routes>
         </BrowserRouter>
