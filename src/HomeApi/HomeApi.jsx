@@ -3,6 +3,7 @@ import Vegge from './Vegge/Vegge';
 import Recommended from './Popular.jsx/recommended';
 import './homeapi.css';
 import Catergory from './category/category';
+import ForYou from './forYou';
 
 function HomeApi() {
   return (
@@ -11,6 +12,7 @@ function HomeApi() {
         <Vegge />
         <Recommended />
         <Catergory />
+        <ForYou />
       </div>
     </div>
   );
