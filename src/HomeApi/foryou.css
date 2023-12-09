@@ -1,0 +1,14 @@
+.forYou {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+}
+
+.foryoucard {
+  height: 52.436440677966104vh;
+  width: 22.395833333333332vw;
+  border-radius: 18px;
+}

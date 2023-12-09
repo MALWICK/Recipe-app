@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './foryou.css';
 
 function forYou() {
   const [meals, setMeals] = useState([]);
@@ -22,11 +23,14 @@ function forYou() {
   console.log(meals, 'foryou');
 
   return (
-    <div>
+    <div className="forYou">
       {meals.map((meal) => (
         <div className="foryoucard">
+          <div className="image-container">
+            <img src={meal.strMealThumb} alt="" />
+          </div>
+
           <p>{meal.strMeal}</p>
-          <img src={meal.strMealThumb} alt="" />
         </div>
       ))}
     </div>
