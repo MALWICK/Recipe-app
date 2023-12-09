@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 
 function foodCategoryDescription() {
-  const { mealId } = useParams();
+  const { idMeal } = useParams();
   const [meal, setMeal] = useState(null);
-  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchMeal = async () => {
       try {
         const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
         );
         setMeal(response.data?.meals[0]);
       } catch (error) {
@@ -20,16 +20,12 @@ function foodCategoryDescription() {
     };
 
     fetchMeal();
-  }, [mealId]);
+  }, [idMeal]);
   console.log(meal);
 
   if (!meal) {
     return <div>Loading mealo...</div>;
   }
-
-  const handleClick = () => {
-    navigate(`/fetchedFood`);
-  };
 
   const ingredients = Object.entries(meal)
     .filter(([key, value]) => key.startsWith('strIngredient') && value)
@@ -46,11 +42,7 @@ function foodCategoryDescription() {
     <div className="mealsdescription">
       <div className="mealDescription__container">
         <div className="back__container">
-          <button
-            type="button"
-            className="back__btn"
-            onClick={() => handleClick()}
-          >
+          <button type="button" className="back__btn">
             <i className="fa-solid fa-arrow-left" />
             Back
           </button>

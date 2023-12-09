@@ -3,12 +3,41 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  background-color: red;
+  justify-content: space-evenly;
+  gap: 2%;
+  margin-top: 1%;
+  /*  background-color: red; */
 }
 
 .foryoucard {
-  height: 52.436440677966104vh;
-  width: 22.395833333333332vw;
-  border-radius: 18px;
+  height: 42.436440677966104vh;
+  width: 20.395833333333332vw;
+  border-radius: 2px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.image-container {
+  width: 100%;
+  height: 85%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.food-header {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 8px;
+}
+
+.food-header p {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: sans-serif;
 }

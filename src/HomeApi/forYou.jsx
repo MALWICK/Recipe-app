@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './foryou.css';
 
 function forYou() {
   const [meals, setMeals] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,15 +24,25 @@ function forYou() {
 
   console.log(meals, 'foryou');
 
+  const handleClick = (idMeal) => {
+    navigate(`/foryouFoodDescription/${idMeal}`);
+  };
+
   return (
     <div className="forYou">
       {meals.map((meal) => (
-        <div className="foryoucard">
+        <div
+          key={meal.strMeal}
+          className="foryoucard"
+          onClick={() => handleClick(meal.idMeal)}
+          aria-hidden="true"
+        >
           <div className="image-container">
             <img src={meal.strMealThumb} alt="" />
           </div>
-
-          <p>{meal.strMeal}</p>
+          <div className="food-header">
+            <p>{meal.strMeal}</p>
+          </div>
         </div>
       ))}
     </div>

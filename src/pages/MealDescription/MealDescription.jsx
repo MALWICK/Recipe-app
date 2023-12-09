@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import './MealDescription.css';
 
@@ -9,6 +9,7 @@ function MealDescription() {
   const [meal, setMeal] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMeal = async () => {
@@ -50,6 +51,10 @@ function MealDescription() {
     return <div>No meal found.</div>;
   }
 
+  const handleClick = () => {
+    navigate(`/fetchedFood`);
+  };
+
   const ingredients = Object.entries(meal)
     .filter(([key, value]) => key.startsWith('strIngredient') && value)
     .map(([key, value]) => {
@@ -65,7 +70,11 @@ function MealDescription() {
     <div className="mealsdescription">
       <div className="mealDescription__container">
         <div className="back__container">
-          <button type="button" className="back__btn">
+          <button
+            type="button"
+            className="back__btn"
+            onClick={() => handleClick()}
+          >
             <i className="fa-solid fa-arrow-left" />
             Back
           </button>

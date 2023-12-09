@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 
 .mealDescription__container {
@@ -13,6 +14,7 @@
   justify-content: center;
   flex-direction: column;
   background-color: #f2f2f2;
+  position: relative;
 }
 
 .back__container {
@@ -22,6 +24,9 @@
   align-items: center;
   padding: 8px;
   background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 
 .back__btn {
@@ -54,7 +59,7 @@
   flex-direction: column;
   background-color: #d8d4d491;
 
-  margin-top: 5px;
+  margin-top: 10%;
 }
 
 .fooddetails-container {

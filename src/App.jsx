@@ -8,6 +8,7 @@ import HomeApi from './HomeApi/HomeApi';
 import MealDescription from './pages/MealDescription/MealDescription';
 import CategoryDescription from './pages/catergoryDescription/categoryDescription';
 import FoodCategoryDescription from './pages/foodCategoryDescription/foodCategoryDescription';
+import ForyouFoodDescription from './pages/foryou/foryouFoodDescription';
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
             <Route
               path="/foodCategoryDescription/:mealId"
               element={<FoodCategoryDescription />}
+            />
+            <Route
+              path="/foryouFoodDescription/:idMeal"
+              element={<ForyouFoodDescription />}
             />
           </Routes>
         </BrowserRouter>
