@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 
 function foodCategoryDescription() {
   const { idMeal } = useParams();
   const [meal, setMeal] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMeal = async () => {
@@ -38,11 +39,20 @@ function foodCategoryDescription() {
       };
     });
 
+  const handleClick = () => {
+    navigate(`/fetchedFood`);
+    console.log('badlucj');
+  };
+
   return (
     <div className="mealsdescription">
       <div className="mealDescription__container">
         <div className="back__container">
-          <button type="button" className="back__btn">
+          <button
+            type="button"
+            className="back__btn"
+            onClick={() => handleClick()}
+          >
             <i className="fa-solid fa-arrow-left" />
             Back
           </button>

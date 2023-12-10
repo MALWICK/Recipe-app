@@ -29,6 +29,7 @@ function foodCategoryDescription() {
 
   const handleClick = () => {
     navigate(`/fetchedFood`);
+    console.log('badlucj');
   };
 
   const ingredients = Object.entries(meal)
