@@ -5,6 +5,7 @@ import SearchNavber from '../../components/nav/searchNavber';
 import Button from '../../Atoms/FoodFormCaller';
 import FoodForm from '../../components/FoodForm/FoodForm';
 import FoodDisplay from '../../components/FoodDisplayer/FoodDisplay';
+import Foodnav from './foodnav/foodnav';
 
 function Food() {
   const { open, setOpen } = useDataContext();
@@ -12,7 +13,10 @@ function Food() {
     <div>
       {open && <FoodForm />}
       <div className="foodContainer">
-        <SearchNavber />
+        <div className="navbar">
+          <Foodnav />
+          <SearchNavber />
+        </div>
         <div className="food-container__inner">
           <div className="button-conatiner">
             <Button
