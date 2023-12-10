@@ -1,0 +1,29 @@
+.categories-container {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 4px;
+  gap: 6px;
+}
+
+.category-holder {
+  width: 5.689583333333333vw;
+  background-color: black;
+  color: #daa520;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0.65rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.category-holder:hover {
+  color: #fff;
+  opacity: 0.3;
+  transition: 0.3s;
+}

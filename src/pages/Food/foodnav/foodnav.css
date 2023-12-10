@@ -1,0 +1,38 @@
+.backlinks {
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+  width: 700px;
+}
+
+.backlins-container {
+  display: flex;
+  align-items: center;
+
+  gap: 14%;
+  width: 100%;
+}
+
+.backhome button {
+  font-size: 18px;
+  font-weight: 700;
+  color: #dcca87;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.backhome button:hover {
+  width: 160px;
+  height: 45px;
+  background-color: #d3b614;
+  color: black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.thehedding {
+  font-size: 36px;
+  font-weight: 900;
+  color: #dcca87;
+}

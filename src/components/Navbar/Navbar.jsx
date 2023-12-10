@@ -1,13 +1,18 @@
 import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import images from '../../constants/images';
 
 import './Navbar.css';
 
 function Navbar() {
+  const navigate = useNavigate();
   const [toggleMenu, setToggleMenu] = React.useState(false);
+
+  const handleNavigation = () => {
+    navigate(`/fetchedFood`);
+  };
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
@@ -20,8 +25,12 @@ function Navbar() {
         <li className="p__opensans">
           <a href="#about">About</a>
         </li>
-        <li className="p__opensans">
-          <a href="#menu">Explore</a>
+        <li
+          className="p__opensans"
+          onClick={() => handleNavigation()}
+          aria-hidden="true"
+        >
+          <a href="#menu">Explore More Food</a>
         </li>
         <li className="p__opensans">
           <a href="#awards">Awards</a>

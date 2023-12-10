@@ -1,0 +1,90 @@
+.mealsdescription {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.mealDescription__container {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  position: relative;
+}
+
+.back__container {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.back__btn {
+  width: 120px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: bold;
+  background-color: goldenrod;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.back__btn i {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.meal__info {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #d8d4d491;
+
+  margin-top: 10%;
+}
+
+.fooddetails-container {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+.food__origin {
+  margin-top: 6px;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.bluetext {
+  color: #0096ff;
+  font-weight: bold;
+}
+
+.lister li {
+  list-style-type: none;
+}
+
+.lighttext {
+  color: rgb(73, 71, 71);
+}
